@@ -21,7 +21,7 @@ resource "aws_lb_target_group" "prometheus_tg" {
   vpc_id   = aws_vpc.main.id
 
   health_check {
-    path                = "/"
+    path                = "/-/healthy"
     port                = "9090"
     protocol            = "HTTP"
     healthy_threshold   = 2
